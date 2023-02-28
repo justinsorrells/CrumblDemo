@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from . import models
+from .models import *
 
 class CookieSerializers(serializers.ModelSerializer):
     class Meta:
-        model = models.Cookie
+        model = Cookie
         fields = ['name', 'image_url', 'upvotes', 'downvotes']

@@ -1,7 +1,7 @@
-from django.urls import path 
+from django.urls import path, include 
 from . import views
+from rest_framework import routers 
 
-app_name = 'cookies'
 urlpatterns = [
-    path('', views.index, name='index')
+    path('api/', views.CookieViewSet.as_view(), name="cookies"),
 ]
