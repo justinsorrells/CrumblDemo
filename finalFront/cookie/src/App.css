@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.square {
+  line-height: 20px;
+  min-height: 100px; 
+  max-height: 100px;
+  width: 100px;
+  margin: 10px;
+  padding: 0px;
+}
