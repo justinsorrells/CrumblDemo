@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  django-gunicorn:
+    volumes: 
+      - static:/static
+    build:
+      context: .
+    ports: 
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
+  
+  react-app:
+    build: ./finalFront
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./finalFront:/finalFront
+
+volumes:
+  static:

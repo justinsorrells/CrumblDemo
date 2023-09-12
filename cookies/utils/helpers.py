@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/Users/Dani/CS50W/final")
+sys.path.append("/Users/Dani/CrumblSite/final")
 import requests
 import os 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "final.settings")
@@ -7,18 +7,18 @@ import django
 django.setup()
 import shutil
 from PIL import Image
-sys.path.append("/Users/Dani/CS50W/cookies")
+sys.path.append("/Users/Dani/CrumblSite/cookies")
 from cookies.models import * 
 
 def setup():
 	import sys
-	sys.path.append("/Users/Dani/CS50W/final")
+	sys.path.append("/Users/Dani/CrumblSite/final")
 	from final import settings
 	import os 
 	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "final.settings")
 	import django
 	django.setup()
-	sys.path.append("/Users/Dani/CS50W/cookies")
+	sys.path.append("/Users/Dani/CrumblSite/cookies")
 
 def print_objs(cookie_objs):
 	for obj in cookie_objs:
@@ -67,7 +67,7 @@ def submit_cookies(cookie_objs):
 def save_images(cookie_objs):
 	for cookie in cookie_objs:
 		pic = requests.get(cookie["cookie_image"], stream = True)
-		filepath = f'/Users/Dani/CS50W/final/cookies/static/images/{cookie["cookie_name"]}.png'
+		filepath = f'/Users/Dani/CrumblSite/final/cookies/static/images/{cookie["cookie_name"]}.png'
 		try:
 			with open(filepath, 'wb') as f:
 				shutil.copyfileobj(pic.raw, f)
